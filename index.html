@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Audio Sorting Visualizer</title>
+  </head>
+  <body>
+    <h1>Sorting Visualizer</h1>
+    <div id="container"></div>
+    <hr />
+    <div>
+      <button onclick="init()">init</button>
+      <button onclick="play()">play</button>
+    </div>
+    <div class="options_container">
+      <label><span>Show Comparison</span> <input id="compare" type="checkbox" /></label>
+      <label><span>Speed (ms)</span><input id="speed" type="number" value="10" /></label>
+      <label><span>Number to sort</span><input id="sortNumber" type="number" value="30" /></label>
+      <button id="saveOptionBtn" onclick="saveOptions()" disabled="true">save options</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
