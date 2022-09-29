@@ -1,5 +1,5 @@
-const array = [];
-let n = 30;
+let array = [];
+let n = 50;
 let timeToSwap = 10;
 let isPlaying = false;
 let showComparison = false;
@@ -36,9 +36,11 @@ sortNumber.addEventListener("change", function () {
 });
 
 function saveOptions() {
+  speed.value = speed.value <= 0 ? 1 : speed.value;
+  sortNumber.value = sortNumber.value <= 2 ? 3 : sortNumber.value;
   showComparison = compare.checked;
-  n = sortNumber.value || 30;
-  timeToSwap = speed.value || 10;
+  n = sortNumber.value;
+  timeToSwap = speed.value;
   saveOptionBtn.disabled = true;
   stopAndReset = true;
   init();
@@ -61,6 +63,9 @@ function playNote(freq) {
 }
 
 function init() {
+  playBtn.disabled = false;
+  stopAndReset = true;
+  array = [];
   for (let i = 0; i < n; i++) {
     array[i] = Math.random();
   }
@@ -70,6 +75,8 @@ function init() {
 function play() {
   if (stopAndReset) stopAndReset = false;
   if (isPlaying) return;
+
+  playBtn.disabled = true;
   isPlaying = true;
   const copy = [...array];
   const moves = bubbleSort(copy);

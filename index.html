@@ -13,12 +13,12 @@
     <hr />
     <div>
       <button onclick="init()">init</button>
-      <button onclick="play()">play</button>
+      <button id="playBtn" onclick="play()">play</button>
     </div>
     <div class="options_container">
       <label><span>Show Comparison</span> <input id="compare" type="checkbox" /></label>
-      <label><span>Speed (ms)</span><input id="speed" type="number" value="10" /></label>
-      <label><span>Number to sort</span><input id="sortNumber" type="number" value="30" /></label>
+      <label><span>Speed (ms)</span><input min="1" id="speed" type="number" value="10" /></label>
+      <label><span>Number to sort</span><input min="3" id="sortNumber" type="number" value="50" /></label>
       <button id="saveOptionBtn" onclick="saveOptions()" disabled="true">save options</button>
     </div>
     <script src="index.js"></script>

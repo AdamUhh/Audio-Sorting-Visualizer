@@ -8,10 +8,13 @@ body {
   height: 200px;
   display: flex;
   align-items: flex-end;
+  overflow: auto;
+  max-width: 90%;
 }
 
 .bar {
   width: 10px;
+  min-width: 10px;
   background-color: black;
   margin: 1px;
 }
